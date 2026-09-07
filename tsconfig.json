@@ -1,44 +1,86 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    // File Layout
+    /* =========================
+       PROJECT STRUCTURE
+       ========================= */
+
     "rootDir": "./src",
     "outDir": "./dist",
 
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "target": "esnext",
-    "types": [],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
+    /* =========================
+       MODULE / NODE.JS
+       ========================= */
 
-    // Other Outputs
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
+
+    "types": ["node"],
+
+    /* =========================
+       OUTPUT
+       ========================= */
+
     "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
 
-    // Stricter Typechecking Options
+    /* Only needed if you are publishing a library/package */
+    "declaration": false,
+    "declarationMap": false,
+
+    /* =========================
+       STRICT TYPE CHECKING
+       ========================= */
+
+    "strict": true,
+
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "useUnknownInCatchVariables": true,
+
+    /* =========================
+       SAFER CODE
+       ========================= */
+
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
 
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "noPropertyAccessFromIndexSignature": true,
+
+    /* =========================
+       UNUSED CODE
+       ========================= */
+
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
 
-    // Recommended Options
-    "strict": true,
-    "jsx": "react-jsx",
+    /* =========================
+       MODERN TYPESCRIPT
+       ========================= */
+
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true,
-  }
+
+    /* =========================
+       OTHER
+       ========================= */
+
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tests"
+  ]
 }

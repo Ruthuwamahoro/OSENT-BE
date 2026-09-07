@@ -1,0 +1,34 @@
+name: OSENT CI/CD Pipeline
+on:
+  push:
+    branches:
+      - main
+      - release
+      - "ft/*"
+      - "fix/*"
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - "ft/*"
+      - "fix/*"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Run ESLint and Prettier
+        run: npm run lint && npm run prettier
