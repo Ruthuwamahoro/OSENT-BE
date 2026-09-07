@@ -18,7 +18,11 @@
     "format": "prettier --write",
     "format:check": "prettier --check .",
     "dev": "nodemon --exec tsx src/index.ts",
-    "build": "npm run lint:fix && npm run format && nodemon --exec tsx src/index.ts"
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "engines": {
+    "node": ">=22"
   },
   "keywords": [],
   "author": "",
@@ -35,6 +39,7 @@
     "@types/express": "^5.0.6",
     "eslint": "^9.39.5",
     "jiti": "^2.7.0",
+    "prettier": "^3.9.6",
     "ts-node": "^10.9.2",
     "tsx": "^4.23.13",
     "typescript": "^5.9.3",
