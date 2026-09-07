@@ -17,7 +17,7 @@
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write",
     "format:check": "prettier --check .",
-    "dev": "npm run lint:fix && nodemon --exec tsx src/index.ts"
+    "dev": "npm run lint:fix && npm run format && nodemon --exec tsx src/index.ts"
   },
   "keywords": [],
   "author": "",
