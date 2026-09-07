@@ -4,16 +4,16 @@ on:
     branches:
       - main
       - release
-      - "ft/*"
-      - "fix/*"
+      - 'ft/*'
+      - 'fix/*'
   pull_request:
     types:
       - opened
       - synchronize
       - reopened
     branches:
-      - "ft/*"
-      - "fix/*"
+      - 'ft/*'
+      - 'fix/*'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,13 +26,13 @@ jobs:
           node-version: '22'
           cache: npm
       - name: Install dependencies
-        run: npm CI
-        
+        run: npm ci
+
       - name: Lint
-        run: npm run lint  
+        run: npm run lint
 
       - name: Format checkout
-        run: npm run format
+        run: npm run format:check
 
       - name: Build the project
         run: npm run build
