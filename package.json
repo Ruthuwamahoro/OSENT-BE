@@ -19,7 +19,8 @@
     "format:check": "prettier --check .",
     "dev": "nodemon --exec tsx src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "prepare": "husky"
   },
   "engines": {
     "node": ">=22"
@@ -38,11 +39,19 @@
     "@eslint/js": "^9.39.5",
     "@types/express": "^5.0.6",
     "eslint": "^9.39.5",
+    "husky": "^9.1.7",
     "jiti": "^2.7.0",
+    "lint-staged": "^16.4.0",
     "prettier": "^3.9.6",
     "ts-node": "^10.9.2",
     "tsx": "^4.23.13",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.70.0"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,json}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
